@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+
+h1, h2, h3 {
+    color: #333;
+    text-align: center;
+}
+
+.components-container, .combinations-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center the items */
+}
+
+ .combination-block {
+    width: calc(33.33% - 10px); /* Three items per row with space */
+    margin: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    box-sizing: border-box; /* Include padding and margin in width */
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+
+.component-card {
+    display: flex;
+    flex-direction: column; /* Stack title and components vertically */
+    align-items: center; /* Center the title */
+    margin: 20px; /* Add margin between cards */
+}
+
+.component-card h3 {
+    text-align: center; /* Center the title text */
+    margin-bottom: 10px; /* Space between title and components */
+}
+
+.component-block {
+    display: inline-block; /* Keep components in a row */
+    margin: 5px; /* Space between components */
+    padding: 10px; /* Padding for better appearance */
+    border-radius: 5px; /* Rounded corners */
+    color: #000000; /* Text color for better contrast */
+    text-align: center; /* Center text in component blocks */
+}

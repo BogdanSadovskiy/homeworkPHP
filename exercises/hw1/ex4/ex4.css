@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+#shapesContainer {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    margin: 20px auto;
+    background-color: white;
+    border: 5px solid #ccc;
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.shape {
+    position: absolute;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.5); 
+}
+
+.square {
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgba(0, 0, 0, 0.5); 
+}
+
+.roundedsquare {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.5); 
+}
+
