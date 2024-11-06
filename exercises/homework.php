@@ -46,12 +46,10 @@ $exercises = isset($homeworkExercises[$homeworkId]) ? $homeworkExercises[$homewo
                     Array of header, content, footer.
                 </li>
             <?php elseif ($homeworkId == 2): ?>
-                <li class="exercise-item" onclick="location.href='exercise.php?id=<?php echo $homeworkId; ?>&exercise=1'">
-                    nothing.
+                <li class="exercise-item" onclick="location.href='/exercises/hw2/student_registartion_form.php'">
+                    Student registartion form.
                 </li>
-                <li class="exercise-item" onclick="location.href='exercise.php?id=<?php echo $homeworkId; ?>&exercise=2'">
-                    nothing.
-                </li>
+              
             <?php endif; ?>
         </ul>
         <a href="../index.php" class="back-link">Back</a>
