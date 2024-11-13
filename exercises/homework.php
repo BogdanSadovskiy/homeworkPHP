@@ -49,11 +49,18 @@ $exercises = isset($homeworkExercises[$homeworkId]) ? $homeworkExercises[$homewo
                 <li class="exercise-item" onclick="location.href='/exercises/hw2/student_registartion_form.php'">
                     Student registartion form.
                 </li>
-              
+            <?php elseif ($homeworkId == 3): ?>
+                <li class="exercise-item" onclick="location.href='/exercises/hw3/folders2.php'">
+                    Work with folders.
+                </li>
+
             <?php endif; ?>
         </ul>
-        <a href="../index.php" class="back-link">Back</a>
+        <?php include "../navigation.php"
+        ?>
+
     </div>
 </body>
+
 
 </html>

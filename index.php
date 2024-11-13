@@ -9,13 +9,20 @@
     <link rel="stylesheet" href="index.css?v=1.0">
 </head>
 
+<?php
+$HW = 3;
+?>
 <body>
     <div class="container">
         <h1>Homework List:</h1>
         <ul class="homework-list">
-            <li class="homework-item" onclick="location.href='/exercises/homework.php?id=2'">HW-2</li>
-            <li class="homework-item" onclick="location.href='/exercises/homework.php?id=1'">HW-1</li>
-
+            <?php
+            $temp = $HW;
+            while ($temp > 0) {
+                echo "<li class='homework-item' onclick=\"location.href='/exercises/homework.php?id=$temp'\">HW-$temp</li>";
+                $temp--;
+            }
+            ?>
         </ul>
 
     </div>
