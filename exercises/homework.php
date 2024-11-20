@@ -1,23 +1,14 @@
 <?php
-// Get the homework ID from the URL parameter
-$homeworkId = isset($_GET['id']) ? intval($_GET['id']) : 1;
 
-// Define exercises for each homework
-$homeworkExercises = [
-    1 => [
-        "EX4",
-        "EX5",
-        "EX6."
-    ],
-    2 => [
-        ".",
-        ".",
-        "."
-    ]
-];
+$homeworkExercises = include '../data.php';
+$homeworkId = isset($_GET['id']) ? intval($_GET['id']) : null;
 
-// Get the exercises for the selected homework
-$exercises = isset($homeworkExercises[$homeworkId]) ? $homeworkExercises[$homeworkId] : [];
+if (!$homeworkId || !isset($homeworkExercises[$homeworkId])) {
+    echo "<h2>Invalid Homework ID</h2>";
+    exit;
+}
+
+$exercises = $homeworkExercises[$homeworkId];
 ?>
 
 <!DOCTYPE html>
@@ -29,38 +20,22 @@ $exercises = isset($homeworkExercises[$homeworkId]) ? $homeworkExercises[$homewo
     <title>HW-<?php echo $homeworkId; ?></title>
     <link rel="stylesheet" href="../common.css">
     <link rel="stylesheet" href="homework.css">
+    <meta name="description" content="Homework <?php echo $homeworkId; ?> - Exercises">
 </head>
 
 <body>
     <div class="container">
         <h1>HW-<?php echo $homeworkId; ?></h1>
         <ul class="exercise-list">
-            <?php if ($homeworkId == 1): ?>
-                <li class="exercise-item" onclick="location.href='/exercises/hw1/ex4/ex4.php'">
-                    Create an array of shapes (name, coordinates, color).
+            <?php foreach ($exercises as $exercise): ?>
+                <li class="exercise-item" onclick="location.href='<?php echo $exercise['path']; ?>'">
+                    <?php echo $exercise['title']; ?>
                 </li>
-                <li class="exercise-item" onclick="location.href='/exercises/hw1/ex5/ex5.php'">
-                    Possible PC Combinations.
-                </li>
-                <li class="exercise-item" onclick="location.href='/exercises/hw1/ex6/ex6.php'">
-                    Array of header, content, footer.
-                </li>
-            <?php elseif ($homeworkId == 2): ?>
-                <li class="exercise-item" onclick="location.href='/exercises/hw2/student_registartion_form.php'">
-                    Student registartion form.
-                </li>
-            <?php elseif ($homeworkId == 3): ?>
-                <li class="exercise-item" onclick="location.href='/exercises/hw3/folders2.php'">
-                    Work with folders.
-                </li>
-
-            <?php endif; ?>
+            <?php endforeach; ?>
         </ul>
-        <?php include "../navigation.php"
-        ?>
 
+        <?php include "../navigation.php"; ?>
     </div>
 </body>
-
 
 </html>

@@ -10,8 +10,9 @@
 </head>
 
 <?php
-$HW = 3;
+$HW = 4; 
 ?>
+
 <body>
     <div class="container">
         <h1>Homework List:</h1>
@@ -19,12 +20,12 @@ $HW = 3;
             <?php
             $temp = $HW;
             while ($temp > 0) {
-                echo "<li class='homework-item' onclick=\"location.href='/exercises/homework.php?id=$temp'\">HW-$temp</li>";
+                $activeClass = $temp == $HW ? "active" : "";
+                echo "<li class='homework-item $activeClass' onclick=\"location.href='/exercises/homework.php?id=$temp'\">HW-$temp</li>";
                 $temp--;
             }
             ?>
         </ul>
-
     </div>
 </body>
 

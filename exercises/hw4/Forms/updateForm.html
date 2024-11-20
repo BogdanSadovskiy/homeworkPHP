@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Book</h1>
+        <form action="../update.php" method="POST">
+            <!-- Hidden field for the book ID -->
+            <input type="hidden" name="id" value="">
+
+            <!-- Book Name -->
+            <label for="name">Book Name:</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                value="" 
+                placeholder="Enter the book name" 
+                required>
+
+            <!-- Book Price -->
+            <label for="price">Price:</label>
+            <input 
+                type="number" 
+                id="price" 
+                name="price" 
+                step="0.01" 
+                value="" 
+                placeholder="Enter the price" 
+                required>
+
+            <!-- Author -->
+            <label for="author">Author:</label>
+            <select id="author" name="author_id" required>
+                <option value="">Select Author</option>
+                <!-- Dynamically load authors -->
+                <option value="1">
+                    John Doe
+                </option>
+            </select>
+
+            <!-- Genre -->
+            <label for="genre">Genre:</label>
+            <select id="genre" name="genre_id" required>
+                <option value="">Select Genre</option>
+                <!-- Dynamically load genres -->
+                <option value="1">
+                    Fiction
+                </option>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit">Update Book</button>
+        </form>
+    </div>
+</body>
+</html>

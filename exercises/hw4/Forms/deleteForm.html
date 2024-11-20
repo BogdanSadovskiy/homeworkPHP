@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="../../../common.css">
+    <link rel="stylesheet" href="../../../index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Books List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamically load books here -->
+                <tr>
+                    <td>1</td>
+                    <td>Sample Book</td>
+                    <td>$19.99</td>
+                    <td>John Doe</td>
+                    <td>Fiction</td>
+                    <td>
+                        <form action="../delete.php" method="POST" style="display: inline;">
+                            <input type="hidden" name="id" value="1">
+                            <button class="delete-button" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
