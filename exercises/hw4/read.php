@@ -10,5 +10,5 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($books as $book) {
     echo "ID: {$book['id']} | Name: {$book['name']} | Price: {$book['price']} | Author: {$book['author_name']} | Genre: {$book['genre_name']}<br>";
+    include "Forms/feedback.php";
 }
-?>
